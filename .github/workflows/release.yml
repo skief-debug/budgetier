@@ -5,6 +5,10 @@ on:
     tags:
       - 'v*'          # Trigger bei: git tag v2 && git push --tags
 
+# ← DAS war das Problem: fehlende Permissions
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build APK & Create Release
@@ -56,5 +60,3 @@ jobs:
           files: BudgeTier-${{ steps.version.outputs.TAG }}.apk
           draft: false
           prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
