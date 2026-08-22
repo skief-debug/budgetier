@@ -5,7 +5,6 @@ on:
     tags:
       - 'v*'          # Trigger bei: git tag v2 && git push --tags
 
-# ← DAS war das Problem: fehlende Permissions
 permissions:
   contents: write
 
@@ -30,7 +29,6 @@ jobs:
         run: |
           TAG="${GITHUB_REF#refs/tags/}"
           VERSION_NAME="${TAG#v}"
-          # versionCode = erste Zahl des Tags (v2.1 → 2)
           VERSION_CODE=$(echo "$VERSION_NAME" | cut -d. -f1)
           echo "TAG=$TAG" >> $GITHUB_OUTPUT
           echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_OUTPUT
@@ -41,15 +39,25 @@ jobs:
           sed -i "s/versionCode = [0-9]*/versionCode = ${{ steps.version.outputs.VERSION_CODE }}/" app/build.gradle.kts
           sed -i "s/versionName = \"[^\"]*\"/versionName = \"${{ steps.version.outputs.VERSION_NAME }}\"/" app/build.gradle.kts
 
+      - name: Decode Keystore
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > budgetier-release.jks
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon
+      - name: Build Release APK (signed)
+        run: |
+          ./gradlew assembleRelease \
+            -Pandroid.injected.signing.store.file=$(pwd)/budgetier-release.jks \
+            -Pandroid.injected.signing.store.password=${{ secrets.KEY_STORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }} \
+            --no-daemon
 
       - name: Rename APK
         run: |
-          mv app/build/outputs/apk/debug/app-debug.apk BudgeTier-${{ steps.version.outputs.TAG }}.apk
+          mv app/build/outputs/apk/release/app-release.apk BudgeTier-${{ steps.version.outputs.TAG }}.apk
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
