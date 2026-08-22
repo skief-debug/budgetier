@@ -17,7 +17,7 @@ import java.net.URL
 //  Dein GitHub-Repo hier eintragen:
 //  Format: "DEIN_USERNAME/DEIN_REPO_NAME"
 // ────────────────────────────────────────────────────
-const val GITHUB_REPO = "ansga/budgetier"   // ← anpassen!
+const val GITHUB_REPO = "skief-debug/budgetier"
 
 data class UpdateInfo(
     val versionCode: Int,
