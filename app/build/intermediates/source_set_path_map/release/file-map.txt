@@ -1,0 +1,46 @@
+com.budgettracker.app-ui-text-release-0 C:\Users\ansga\.gradle\caches\transforms-3\019fa85cccfb4b3e2be4a7dd91449863\transformed\ui-text-release\res
+com.budgettracker.app-animation-release-1 C:\Users\ansga\.gradle\caches\transforms-3\106fe97a23c304bb96b2f1be929c2153\transformed\animation-release\res
+com.budgettracker.app-savedstate-ktx-1.2.1-2 C:\Users\ansga\.gradle\caches\transforms-3\1f7436db3955d1dd602167fe0bb695c2\transformed\savedstate-ktx-1.2.1\res
+com.budgettracker.app-annotation-experimental-1.4.0-3 C:\Users\ansga\.gradle\caches\transforms-3\21e1880af92afc2fd764449b40bcf124\transformed\annotation-experimental-1.4.0\res
+com.budgettracker.app-runtime-saveable-release-4 C:\Users\ansga\.gradle\caches\transforms-3\233e7052c53860c96e027ba0f020b23b\transformed\runtime-saveable-release\res
+com.budgettracker.app-core-ktx-1.12.0-5 C:\Users\ansga\.gradle\caches\transforms-3\29b73786fa461dc4c2f1776f672d5e07\transformed\core-ktx-1.12.0\res
+com.budgettracker.app-lifecycle-runtime-2.7.0-6 C:\Users\ansga\.gradle\caches\transforms-3\2e3c0b9f62d3d637ad3dd5ac8a419390\transformed\lifecycle-runtime-2.7.0\res
+com.budgettracker.app-material-icons-core-release-7 C:\Users\ansga\.gradle\caches\transforms-3\39aa632c9f374818c47a87644d79fe2e\transformed\material-icons-core-release\res
+com.budgettracker.app-lifecycle-viewmodel-savedstate-2.7.0-8 C:\Users\ansga\.gradle\caches\transforms-3\402cac406e968821416647d10ce04bd6\transformed\lifecycle-viewmodel-savedstate-2.7.0\res
+com.budgettracker.app-sqlite-framework-2.4.0-9 C:\Users\ansga\.gradle\caches\transforms-3\4ab3242d8ec200d9f93df9e7b91a678b\transformed\sqlite-framework-2.4.0\res
+com.budgettracker.app-lifecycle-process-2.7.0-10 C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\res
+com.budgettracker.app-lifecycle-livedata-core-2.7.0-11 C:\Users\ansga\.gradle\caches\transforms-3\4fefb7fb7f82f01094122a8611b37954\transformed\lifecycle-livedata-core-2.7.0\res
+com.budgettracker.app-ui-release-12 C:\Users\ansga\.gradle\caches\transforms-3\68f3f5d7d8f21583950c3f7e2ecd90fa\transformed\ui-release\res
+com.budgettracker.app-animation-core-release-13 C:\Users\ansga\.gradle\caches\transforms-3\70055da4b78a6b8cbf4d55c6d16b157e\transformed\animation-core-release\res
+com.budgettracker.app-room-runtime-2.6.1-14 C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\res
+com.budgettracker.app-material-ripple-release-15 C:\Users\ansga\.gradle\caches\transforms-3\7b71c1a8d15638d9060b111c892bdf7d\transformed\material-ripple-release\res
+com.budgettracker.app-ui-unit-release-16 C:\Users\ansga\.gradle\caches\transforms-3\87f2be960eae7c26169d06e3737e2e88\transformed\ui-unit-release\res
+com.budgettracker.app-customview-poolingcontainer-1.0.0-17 C:\Users\ansga\.gradle\caches\transforms-3\926f5ea8fa6e4d6e1f2473fa3d8bf8bc\transformed\customview-poolingcontainer-1.0.0\res
+com.budgettracker.app-ui-graphics-release-18 C:\Users\ansga\.gradle\caches\transforms-3\9b17c3022d17ea4b28e8282e744b0a78\transformed\ui-graphics-release\res
+com.budgettracker.app-activity-ktx-1.8.2-19 C:\Users\ansga\.gradle\caches\transforms-3\9e4ce94f8159d0023cbf8105024a720e\transformed\activity-ktx-1.8.2\res
+com.budgettracker.app-lifecycle-viewmodel-ktx-2.7.0-20 C:\Users\ansga\.gradle\caches\transforms-3\a1d7609caf244695c56d10c77214bb2a\transformed\lifecycle-viewmodel-ktx-2.7.0\res
+com.budgettracker.app-core-1.12.0-21 C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\res
+com.budgettracker.app-activity-compose-1.8.2-22 C:\Users\ansga\.gradle\caches\transforms-3\be43bfd5d7609a53feb00ecdfbb33244\transformed\activity-compose-1.8.2\res
+com.budgettracker.app-material3-release-23 C:\Users\ansga\.gradle\caches\transforms-3\bfca8f4b7f5cd23917ea98f3acdd5d77\transformed\material3-release\res
+com.budgettracker.app-foundation-release-24 C:\Users\ansga\.gradle\caches\transforms-3\c3fba3dcef91fee823e2e3e3c009c371\transformed\foundation-release\res
+com.budgettracker.app-startup-runtime-1.1.1-25 C:\Users\ansga\.gradle\caches\transforms-3\c8ff22a86fb824ff72ff80468b743e88\transformed\startup-runtime-1.1.1\res
+com.budgettracker.app-room-ktx-2.6.1-26 C:\Users\ansga\.gradle\caches\transforms-3\ca2e06463f4dc64bb7de9ceab8e597c0\transformed\room-ktx-2.6.1\res
+com.budgettracker.app-sqlite-2.4.0-27 C:\Users\ansga\.gradle\caches\transforms-3\cb0c6822729f657ca2390282022be602\transformed\sqlite-2.4.0\res
+com.budgettracker.app-ui-util-release-28 C:\Users\ansga\.gradle\caches\transforms-3\ceb88ea42b5fd1ff40d6b6cffb9b3518\transformed\ui-util-release\res
+com.budgettracker.app-ui-geometry-release-29 C:\Users\ansga\.gradle\caches\transforms-3\d043f65a76fa5fc6881c0093df57c830\transformed\ui-geometry-release\res
+com.budgettracker.app-profileinstaller-1.3.0-30 C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\res
+com.budgettracker.app-foundation-layout-release-31 C:\Users\ansga\.gradle\caches\transforms-3\dbc6c62b8a57c4bff82ea7d5e4f9bb76\transformed\foundation-layout-release\res
+com.budgettracker.app-emoji2-1.3.0-32 C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\res
+com.budgettracker.app-core-runtime-2.2.0-33 C:\Users\ansga\.gradle\caches\transforms-3\e99afefed0cd18a657541ad3812d9d17\transformed\core-runtime-2.2.0\res
+com.budgettracker.app-runtime-release-34 C:\Users\ansga\.gradle\caches\transforms-3\f1edd6a51f250f515632e379108e1104\transformed\runtime-release\res
+com.budgettracker.app-activity-1.8.2-35 C:\Users\ansga\.gradle\caches\transforms-3\f81a9c3625c50460f82b96fdb8d89001\transformed\activity-1.8.2\res
+com.budgettracker.app-lifecycle-viewmodel-2.7.0-36 C:\Users\ansga\.gradle\caches\transforms-3\f96aaae08fec78ec6a4ce3e64ff45df1\transformed\lifecycle-viewmodel-2.7.0\res
+com.budgettracker.app-savedstate-1.2.1-37 C:\Users\ansga\.gradle\caches\transforms-3\fceb8d50ecc3b7eb89b61e04142d47e0\transformed\savedstate-1.2.1\res
+com.budgettracker.app-lifecycle-runtime-ktx-2.7.0-38 C:\Users\ansga\.gradle\caches\transforms-3\fd28803a20a8b726bc31b77ee4a6ee50\transformed\lifecycle-runtime-ktx-2.7.0\res
+com.budgettracker.app-ui-tooling-preview-release-39 C:\Users\ansga\.gradle\caches\transforms-3\ff4085134b86d0ffbc96607b75869643\transformed\ui-tooling-preview-release\res
+com.budgettracker.app-resValues-40 C:\Users\ansga\Desktop\budget app\app\build\generated\res\resValues\release
+com.budgettracker.app-packageReleaseResources-41 C:\Users\ansga\Desktop\budget app\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.budgettracker.app-packageReleaseResources-42 C:\Users\ansga\Desktop\budget app\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.budgettracker.app-merged_res-43 C:\Users\ansga\Desktop\budget app\app\build\intermediates\merged_res\release
+com.budgettracker.app-main-44 C:\Users\ansga\Desktop\budget app\app\src\main\res
+com.budgettracker.app-release-45 C:\Users\ansga\Desktop\budget app\app\src\release\res

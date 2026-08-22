@@ -1,0 +1,25 @@
+# Android build artifacts
+/app/build/
+/build/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Local config
+local.properties
+*.jks
+*.keystore
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# OS
+Thumbs.db

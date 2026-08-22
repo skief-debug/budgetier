@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.budgettracker.app.SmartInputParserTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-08-13T21:25:00" hostname="THINKANSGAR" time="0.102">
+  <properties/>
+  <testcase name="testParseDecimalWithCommaAndKeywordGestern" classname="com.budgettracker.app.SmartInputParserTest" time="0.096"/>
+  <testcase name="testParseLeadingDescriptionAndTrailingAmount" classname="com.budgettracker.app.SmartInputParserTest" time="0.0"/>
+  <testcase name="testParseSimpleAmountAndDescription" classname="com.budgettracker.app.SmartInputParserTest" time="0.001"/>
+  <testcase name="testParseAmountOnlyFallbackDescription" classname="com.budgettracker.app.SmartInputParserTest" time="0.0"/>
+  <testcase name="testParseInvalidInputReturnsNull" classname="com.budgettracker.app.SmartInputParserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
