@@ -8,124 +8,153 @@
 8        android:minSdkVersion="26"
 9        android:targetSdkVersion="34" />
 10
-11    <permission
-11-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-12        android:name="com.budgettracker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-12-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-13        android:protectionLevel="signature" />
-13-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+11    <!-- Auto-Updater: Internet + APK Install -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:5:5-67
+12-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:5:22-64
+13    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+13-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:6:5-83
+13-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:6:22-80
 14
-15    <uses-permission android:name="com.budgettracker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-15-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-15-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
-16
-17    <application
-17-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:4:5-19:19
-18        android:allowBackup="true"
-18-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:5:9-35
-19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
-20        android:extractNativeLibs="false"
-21        android:label="AI Budget Tracker"
-21-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:6:9-42
-22        android:supportsRtl="true"
-22-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:7:9-35
-23        android:theme="@android:style/Theme.Material.NoActionBar" >
-23-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:8:9-66
-24        <activity
-24-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:10:9-18:20
-25            android:name="com.budgettracker.app.MainActivity"
-25-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:11:13-41
-26            android:exported="true"
-26-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:12:13-36
-27            android:theme="@android:style/Theme.Material.NoActionBar" >
-27-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:13:13-70
-28            <intent-filter>
-28-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:14:13-17:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:15:17-69
-29-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:15:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:16:17-77
-31-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:16:27-74
-32            </intent-filter>
-33        </activity>
-34
-35        <provider
-35-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
-36            android:name="androidx.startup.InitializationProvider"
-36-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
-37            android:authorities="com.budgettracker.app.androidx-startup"
-37-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
-38            android:exported="false" >
-38-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
-39            <meta-data
-39-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
-40                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-40-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
-41                android:value="androidx.startup" />
-41-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
-42            <meta-data
-42-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-43                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-43-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-44                android:value="androidx.startup" />
-44-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-45            <meta-data
-45-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-46                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-46-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-47                android:value="androidx.startup" />
-47-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-48        </provider>
-49
-50        <service
-50-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-51            android:name="androidx.room.MultiInstanceInvalidationService"
-51-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-52            android:directBootAware="true"
-52-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-53            android:exported="false" />
-53-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-54
-55        <receiver
-55-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-56            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-56-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-57            android:directBootAware="false"
-57-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-58            android:enabled="true"
-58-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-59            android:exported="true"
-59-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-60            android:permission="android.permission.DUMP" >
-60-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-61            <intent-filter>
-61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-62                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-63            </intent-filter>
-64            <intent-filter>
-64-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-65                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-65-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-66            </intent-filter>
-67            <intent-filter>
-67-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-68                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-68-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-69            </intent-filter>
-70            <intent-filter>
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-71                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-72            </intent-filter>
-73        </receiver>
-74    </application>
-75
-76</manifest>
+15    <permission
+15-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+16        android:name="com.budgettracker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+16-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+17        android:protectionLevel="signature" />
+17-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+18
+19    <uses-permission android:name="com.budgettracker.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+19-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+20
+21    <application
+21-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:8:5-37:19
+22        android:allowBackup="true"
+22-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:9:9-35
+23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+23-->[androidx.core:core:1.12.0] C:\Users\ansga\.gradle\caches\transforms-3\b0e64fe54e20fe456fa8ebe8c34396a9\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+24        android:extractNativeLibs="false"
+25        android:icon="@mipmap/ic_launcher"
+25-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:10:9-43
+26        android:label="@string/app_name"
+26-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:12:9-41
+27        android:roundIcon="@mipmap/ic_launcher_round"
+27-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:11:9-54
+28        android:supportsRtl="true"
+28-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:13:9-35
+29        android:theme="@android:style/Theme.Material.NoActionBar" >
+29-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:14:9-66
+30        <activity
+30-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:16:9-24:20
+31            android:name="com.budgettracker.app.MainActivity"
+31-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:17:13-41
+32            android:exported="true"
+32-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:18:13-36
+33            android:theme="@android:style/Theme.Material.NoActionBar" >
+33-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:19:13-70
+34            <intent-filter>
+34-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:20:13-23:29
+35                <action android:name="android.intent.action.MAIN" />
+35-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:21:17-69
+35-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:21:25-66
+36
+37                <category android:name="android.intent.category.LAUNCHER" />
+37-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:22:17-77
+37-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:22:27-74
+38            </intent-filter>
+39        </activity>
+40
+41        <!-- FileProvider für APK-Installation -->
+42        <provider
+43            android:name="androidx.core.content.FileProvider"
+43-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:28:13-62
+44            android:authorities="com.budgettracker.app.fileprovider"
+44-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:29:13-64
+45            android:exported="false"
+45-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:30:13-37
+46            android:grantUriPermissions="true" >
+46-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:31:13-47
+47            <meta-data
+47-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:32:13-34:63
+48                android:name="android.support.FILE_PROVIDER_PATHS"
+48-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:33:17-67
+49                android:resource="@xml/file_provider_paths" />
+49-->C:\Users\ansga\Desktop\budget app\app\src\main\AndroidManifest.xml:34:17-60
+50        </provider>
+51        <provider
+51-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+52            android:name="androidx.startup.InitializationProvider"
+52-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+53            android:authorities="com.budgettracker.app.androidx-startup"
+53-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+54            android:exported="false" >
+54-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+55            <meta-data
+55-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+56                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+56-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+57                android:value="androidx.startup" />
+57-->[androidx.emoji2:emoji2:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\df3c405696c61228975a928af0d12ecb\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+58            <meta-data
+58-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+59                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+59-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+60                android:value="androidx.startup" />
+60-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ansga\.gradle\caches\transforms-3\4dcf0efb2c0ee8c3a0e5f27a76602ee5\transformed\lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+61            <meta-data
+61-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+62                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+62-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+63                android:value="androidx.startup" />
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+64        </provider>
+65
+66        <service
+66-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+67            android:name="androidx.room.MultiInstanceInvalidationService"
+67-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+68            android:directBootAware="true"
+68-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+69            android:exported="false" />
+69-->[androidx.room:room-runtime:2.6.1] C:\Users\ansga\.gradle\caches\transforms-3\700bf7460ae299208507576746ce34d9\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+70
+71        <receiver
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+72            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+73            android:directBootAware="false"
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+74            android:enabled="true"
+74-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+75            android:exported="true"
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+76            android:permission="android.permission.DUMP" >
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+77            <intent-filter>
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+78                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+79            </intent-filter>
+80            <intent-filter>
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+81                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+82            </intent-filter>
+83            <intent-filter>
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+84                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+85            </intent-filter>
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+87                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ansga\.gradle\caches\transforms-3\d9a066aa3298f07c9d7b49e1eec1cd67\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+88            </intent-filter>
+89        </receiver>
+90    </application>
+91
+92</manifest>

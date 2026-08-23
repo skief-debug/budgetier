@@ -1,9 +1,10 @@
 name: Build & Release APK
 
+# ✅ Nur pushen — kein Tag, kein Aufwand
 on:
   push:
-    tags:
-      - 'v*'          # Trigger bei: git tag v2 && git push --tags
+    branches:
+      - master
 
 permissions:
   contents: write
@@ -24,15 +25,16 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Extract version from tag
+      - name: Generate version from run number
         id: version
         run: |
-          TAG="${GITHUB_REF#refs/tags/}"
-          VERSION_NAME="${TAG#v}"
-          VERSION_CODE=$(echo "$VERSION_NAME" | cut -d. -f1)
-          echo "TAG=$TAG" >> $GITHUB_OUTPUT
-          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_OUTPUT
+          # versionCode = Build-Nummer (zählt automatisch hoch)
+          VERSION_CODE=${{ github.run_number }}
+          VERSION_NAME="1.$VERSION_CODE"
+          TAG="v1.$VERSION_CODE"
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_OUTPUT
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_OUTPUT
+          echo "TAG=$TAG" >> $GITHUB_OUTPUT
 
       - name: Update versionCode & versionName in build.gradle.kts
         run: |
