@@ -30,8 +30,8 @@ jobs:
         run: |
           # versionCode = Build-Nummer (zählt automatisch hoch)
           VERSION_CODE=${{ github.run_number }}
-          VERSION_NAME="1.$VERSION_CODE"
-          TAG="v1.$VERSION_CODE"
+          VERSION_NAME="$VERSION_CODE"
+          TAG="v$VERSION_CODE"
           echo "VERSION_CODE=$VERSION_CODE" >> $GITHUB_OUTPUT
           echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_OUTPUT
           echo "TAG=$TAG" >> $GITHUB_OUTPUT
