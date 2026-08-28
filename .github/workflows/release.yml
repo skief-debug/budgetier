@@ -50,7 +50,7 @@ jobs:
 
       - name: Build Release APK (signed)
         run: |
-          ./gradlew assembleRelease \
+          ./gradlew assembleSandboxRelease \
             -Pandroid.injected.signing.store.file=$(pwd)/budgetier-release.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEY_STORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
@@ -59,7 +59,7 @@ jobs:
 
       - name: Rename APK
         run: |
-          mv app/build/outputs/apk/release/app-release.apk BudgeTier-${{ steps.version.outputs.TAG }}.apk
+          mv app/build/outputs/apk/sandbox/release/app-sandbox-release.apk BudgeTier-${{ steps.version.outputs.TAG }}.apk
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

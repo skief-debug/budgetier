@@ -40,6 +40,18 @@ android {
             )
         }
     }
+    flavorDimensions += "env"
+    productFlavors {
+        create("sandbox") {
+            dimension = "env"
+            buildConfigField("boolean", "ENABLE_AUTO_UPDATER", "true")
+        }
+        create("production") {
+            dimension = "env"
+            buildConfigField("boolean", "ENABLE_AUTO_UPDATER", "false")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

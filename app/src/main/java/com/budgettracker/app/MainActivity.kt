@@ -54,7 +54,19 @@ class MainActivity : ComponentActivity() {
 
                 var isOnboardingCompleted by remember { mutableStateOf(prefManager.isOnboardingCompleted) }
 
-
+                // ── Auto-Updater ──────────────────────────────────────
+                var pendingUpdate by remember { mutableStateOf<UpdateInfo?>(null) }
+                LaunchedEffect(Unit) {
+                    if (BuildConfig.ENABLE_AUTO_UPDATER) {
+                        launch {
+                            val result = UpdateManager.checkForUpdate(BuildConfig.VERSION_CODE)
+                            if (result is UpdateCheckResult.UpdateAvailable) {
+                                pendingUpdate = result.info
+                            }
+                        }
+                    }
+                }
+                // ──────────────────────────────────────────────────────
 
                 // Database reference
                 val db = remember { AppDatabase.getDatabase(context) }
@@ -340,7 +352,14 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
 
-
+                            // ── Update Dialog ────────────────────────────────────
+                            pendingUpdate?.let { info ->
+                                UpdateDialog(
+                                    updateInfo = info,
+                                    onDismiss = { pendingUpdate = null }
+                                )
+                            }
+                            // ────────────────────────────────────────────────────
 
                             selectedCategoryForDetail?.let { cat ->
                                 CategoryDetailModal(
