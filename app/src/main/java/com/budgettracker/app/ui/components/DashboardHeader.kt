@@ -20,7 +20,6 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardHeader(
-    userName: String,
     totalSpent: Double,
     totalLimit: Double,
     isWeeklyView: Boolean,
@@ -91,7 +90,7 @@ fun DashboardHeader(
                     Spacer(modifier = Modifier.width(10.dp))
                     Column {
                         Text(
-                            text = if (userName.isNotBlank()) "Hallo, $userName 👋" else "BudgeTier 🐊",
+                            text = "Dashboard",
                             color = Color.White,
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Bold

@@ -53,7 +53,6 @@ class MainActivity : ComponentActivity() {
                 val prefManager = remember { PreferenceManager(context) }
 
                 var isOnboardingCompleted by remember { mutableStateOf(prefManager.isOnboardingCompleted) }
-                var userName by remember { mutableStateOf(prefManager.userName) }
 
                 // ── Auto-Updater ──────────────────────────────────────
                 var pendingUpdate by remember { mutableStateOf<UpdateInfo?>(null) }
@@ -104,13 +103,11 @@ class MainActivity : ComponentActivity() {
                 if (!isOnboardingCompleted) {
                     // Onboarding Flow
                     OnboardingScreen(
-                        onCompleteOnboarding = { newName, newCategories ->
+                        onCompleteOnboarding = { newCategories ->
                             scope.launch {
                                 db.categoryBudgetDao().deleteAllCategories()
                                 db.categoryBudgetDao().insertCategories(newCategories)
-                                prefManager.userName = newName
                                 prefManager.isOnboardingCompleted = true
-                                userName = newName
                                 isOnboardingCompleted = true
                             }
                         }
@@ -142,7 +139,7 @@ class MainActivity : ComponentActivity() {
                     Scaffold(
                         floatingActionButton = {
                             if (selectedTab == 0) {
-                                FloatingActionButton(
+                                ExtendedFloatingActionButton(
                                     onClick = {
                                         preselectedCategoryIdForNewTx = null
                                         editingTransaction = null
@@ -152,7 +149,9 @@ class MainActivity : ComponentActivity() {
                                     contentColor = Color.Black,
                                     shape = RoundedCornerShape(16.dp)
                                 ) {
-                                    Text("➕", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+                                    Text("➕", fontWeight = FontWeight.Bold, fontSize = 18.sp)
+                                    Spacer(modifier = Modifier.width(8.dp))
+                                    Text("Ausgabe", fontWeight = FontWeight.Bold)
                                 }
                             }
                         },
@@ -195,7 +194,6 @@ class MainActivity : ComponentActivity() {
                                 ) {
                                     // Header Module
                                     DashboardHeader(
-                                        userName = userName,
                                         totalSpent = totalSpent,
                                         totalLimit = totalLimit,
                                         isWeeklyView = isWeeklyView,
@@ -328,45 +326,7 @@ class MainActivity : ComponentActivity() {
                                 )
                             }
 
-                            // Modals
-                            if (showSettingsModal) {
-                                SettingsScreen(
-                                    userName = userName,
-                                    onUpdateUserName = { newName ->
-                                        userName = newName
-                                        prefManager.userName = newName
-                                    },
-                                    onClearAllData = {
-                                        scope.launch {
-                                            db.transactionDao().deleteAllTransactions()
-                                            db.categoryBudgetDao().deleteAllCategories()
-                                            prefManager.clearAll()
-                                            isOnboardingCompleted = false
-                                            userName = ""
-                                        }
-                                    },
-                                    transactions = allTransactions,
-                                    categories = categories,
-                                    onAddCategory = { newCat ->
-                                        scope.launch {
-                                            db.categoryBudgetDao().insertCategory(newCat)
-                                        }
-                                    },
-                                    onUpdateCategory = { updatedCat ->
-                                        scope.launch {
-                                            db.categoryBudgetDao().updateCategory(updatedCat)
-                                        }
-                                    },
-                                    onDeleteCategory = { catToDelete ->
-                                        scope.launch {
-                                            db.categoryBudgetDao().deleteCategory(catToDelete)
-                                        }
-                                    },
-                                    onDismiss = { showSettingsModal = false }
-                                )
-                            }
-
-                // New / Edit Transaction Modal
+                            // New / Edit Transaction Modal
                             if (showNewTransactionModal) {
                                 NewTransactionModal(
                                     categories = categories,
@@ -446,6 +406,38 @@ class MainActivity : ComponentActivity() {
                                     onDismiss = { showUnassignedModal = false }
                                 )
                             }
+                        }
+                    }
+
+                    if (showSettingsModal) {
+                        Box(modifier = Modifier.fillMaxSize().padding(bottom = 0.dp)) {
+                            SettingsScreen(
+                                onClearAllData = {
+                                    scope.launch {
+                                        db.transactionDao().deleteAllTransactions()
+                                        db.categoryBudgetDao().deleteAllCategories()
+                                        prefManager.clearAll()
+                                        isOnboardingCompleted = false
+                                    }
+                                },
+                                categories = categories,
+                                onAddCategory = { newCat ->
+                                    scope.launch {
+                                        db.categoryBudgetDao().insertCategory(newCat)
+                                    }
+                                },
+                                onUpdateCategory = { updatedCat ->
+                                    scope.launch {
+                                        db.categoryBudgetDao().updateCategory(updatedCat)
+                                    }
+                                },
+                                onDeleteCategory = { catToDelete ->
+                                    scope.launch {
+                                        db.categoryBudgetDao().deleteCategory(catToDelete)
+                                    }
+                                },
+                                onDismiss = { showSettingsModal = false }
+                            )
                         }
                     }
                 }

@@ -27,10 +27,9 @@ import com.budgettracker.app.data.CategoryBudget
 
 @Composable
 fun OnboardingScreen(
-    onCompleteOnboarding: (userName: String, selectedCategories: List<CategoryBudget>) -> Unit
+    onCompleteOnboarding: (selectedCategories: List<CategoryBudget>) -> Unit
 ) {
     var step by remember { mutableStateOf(1) }
-    var nameInput by remember { mutableStateOf("") }
     
     // Default categories selection state
     val defaultCategories = remember {
@@ -101,7 +100,7 @@ fun OnboardingScreen(
 
             when (step) {
                 1 -> {
-                    // Step 1: Name Input
+                    // Step 1: Category Picker
                     Card(
                         colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
                         shape = RoundedCornerShape(16.dp),
@@ -109,66 +108,7 @@ fun OnboardingScreen(
                     ) {
                         Column(modifier = Modifier.padding(20.dp)) {
                             Text(
-                                text = "Schritt 1 von 3",
-                                color = Color(0xFF00E676),
-                                fontSize = 12.sp,
-                                fontWeight = FontWeight.SemiBold
-                            )
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(
-                                text = "Hey! Wie heißt du?",
-                                color = Color.White,
-                                fontSize = 20.sp,
-                                fontWeight = FontWeight.Bold
-                            )
-                            Spacer(modifier = Modifier.height(16.dp))
-                            OutlinedTextField(
-                                value = nameInput,
-                                onValueChange = { nameInput = it },
-                                placeholder = { Text("z. B. Ansgar", color = Color.Gray) },
-                                singleLine = true,
-                                colors = OutlinedTextFieldDefaults.colors(
-                                    focusedContainerColor = Color(0xFF2A2A2A),
-                                    unfocusedContainerColor = Color(0xFF2A2A2A),
-                                    focusedBorderColor = Color(0xFF00E676),
-                                    unfocusedBorderColor = Color(0xFF444444),
-                                    focusedTextColor = Color.White,
-                                    unfocusedTextColor = Color.White
-                                ),
-                                shape = RoundedCornerShape(12.dp),
-                                modifier = Modifier.fillMaxWidth()
-                            )
-                        }
-                    }
-
-                    Spacer(modifier = Modifier.height(24.dp))
-
-                    Button(
-                        onClick = { if (nameInput.isNotBlank()) step = 2 },
-                        enabled = nameInput.isNotBlank(),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF00E676),
-                            disabledContainerColor = Color(0xFF333333)
-                        ),
-                        shape = RoundedCornerShape(12.dp),
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(50.dp)
-                    ) {
-                        Text("Weiter →", color = if (nameInput.isNotBlank()) Color.Black else Color.Gray, fontSize = 16.sp, fontWeight = FontWeight.Bold)
-                    }
-                }
-
-                2 -> {
-                    // Step 2: Category Picker
-                    Card(
-                        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1E1E)),
-                        shape = RoundedCornerShape(16.dp),
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        Column(modifier = Modifier.padding(20.dp)) {
-                            Text(
-                                text = "Schritt 2 von 3",
+                                text = "Schritt 1 von 2",
                                 color = Color(0xFF00E676),
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.SemiBold
@@ -266,21 +206,12 @@ fun OnboardingScreen(
                     Spacer(modifier = Modifier.height(24.dp))
 
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
-                        OutlinedButton(
-                            onClick = { step = 1 },
-                            shape = RoundedCornerShape(12.dp),
-                            modifier = Modifier
-                                .weight(1f)
-                                .height(50.dp)
-                        ) {
-                            Text("Zurück", color = Color.White)
-                        }
                         Button(
-                            onClick = { step = 3 },
+                            onClick = { step = 2 },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676)),
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
-                                .weight(1f)
+                                .fillMaxWidth()
                                 .height(50.dp)
                         ) {
                             Text("Weiter →", color = Color.Black, fontWeight = FontWeight.Bold)
@@ -288,8 +219,8 @@ fun OnboardingScreen(
                     }
                 }
 
-                3 -> {
-                    // Step 3: Budget Limits setup
+                2 -> {
+                    // Step 2: Budget Limits setup
                     val activeCategories = (defaultCategories + customCategories).filter { selectedCategoryMap[it.id] == true }
 
                     Card(
@@ -299,7 +230,7 @@ fun OnboardingScreen(
                     ) {
                         Column(modifier = Modifier.padding(20.dp)) {
                             Text(
-                                text = "Schritt 3 von 3",
+                                text = "Schritt 2 von 2",
                                 color = Color(0xFF00E676),
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.SemiBold
@@ -345,7 +276,7 @@ fun OnboardingScreen(
 
                     Row(horizontalArrangement = Arrangement.spacedBy(12.dp), modifier = Modifier.fillMaxWidth()) {
                         OutlinedButton(
-                            onClick = { step = 2 },
+                            onClick = { step = 1 },
                             shape = RoundedCornerShape(12.dp),
                             modifier = Modifier
                                 .weight(1f)
@@ -359,7 +290,7 @@ fun OnboardingScreen(
                                     val limitVal = (categoryLimitsMap[cat.id] ?: "0").toDoubleOrNull() ?: cat.limit
                                     cat.copy(limit = limitVal)
                                 }
-                                onCompleteOnboarding(nameInput.trim(), finalCategories)
+                                onCompleteOnboarding(finalCategories)
                             },
                             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676)),
                             shape = RoundedCornerShape(12.dp),

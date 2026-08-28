@@ -4,6 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.*
@@ -43,84 +44,92 @@ fun CategoryDetailModal(
 
     val dateFormat = remember { SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY) }
 
-    AlertDialog(
+    androidx.compose.ui.window.Dialog(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF1E1E1E),
-        titleContentColor = Color.White,
-        textContentColor = Color.White,
-        title = {
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Text(
-                    text = category.title,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp,
-                    color = Color.White
-                )
-                Surface(
-                    color = Color(0xFF2A2A2A),
-                    shape = RoundedCornerShape(8.dp)
-                ) {
-                    Text(
-                        text = if (category.type == "RUECKLAGE") "Spar-Puffer" else "Ausgabe",
-                        color = Color.LightGray,
-                        fontSize = 11.sp,
-                        modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
-                    )
-                }
-            }
-        },
-        text = {
+        properties = androidx.compose.ui.window.DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Surface(
+            modifier = Modifier
+                .fillMaxWidth(0.92f)
+                .fillMaxHeight(0.85f),
+            shape = RoundedCornerShape(24.dp),
+            color = Color(0xFF1E1E1E)
+        ) {
             Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 4.dp)
+                    .fillMaxSize()
+                    .padding(20.dp)
             ) {
-                // Budget Limit Card / Editor Section
+                // Header
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column {
+                        Text(
+                            text = category.title,
+                            fontWeight = FontWeight.Bold,
+                            fontSize = 24.sp,
+                            color = Color.White
+                        )
+                        Spacer(modifier = Modifier.height(4.dp))
+                        Text(
+                            text = if (category.type == "RUECKLAGE") "Spar-Puffer" else "Ausgabe",
+                            color = Color.Gray,
+                            fontSize = 13.sp
+                        )
+                    }
+                    IconButton(
+                        onClick = onDismiss,
+                        modifier = Modifier
+                            .background(Color(0xFF2A2A2A), CircleShape)
+                            .size(36.dp)
+                    ) {
+                        Text("✕", color = Color.White, fontSize = 16.sp)
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(24.dp))
+
+                // Budget & Spent Section
                 Surface(
                     color = Color(0xFF262626),
-                    shape = RoundedCornerShape(12.dp),
+                    shape = RoundedCornerShape(16.dp),
                     modifier = Modifier.fillMaxWidth()
                 ) {
-                    Column(modifier = Modifier.padding(14.dp)) {
+                    Column(modifier = Modifier.padding(16.dp)) {
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Column {
-                                Text("Monatliches Limit", color = Color.Gray, fontSize = 12.sp)
+                                Text("Monatliches Limit", color = Color.Gray, fontSize = 13.sp)
                                 if (!isEditingLimit) {
                                     Text(
                                         text = "${category.limit.toInt()} €",
-                                        color = Color(0xFF00E676),
-                                        fontSize = 20.sp,
+                                        color = Color.White,
+                                        fontSize = 22.sp,
                                         fontWeight = FontWeight.Bold
                                     )
                                 }
                             }
 
                             if (!isEditingLimit) {
-                                OutlinedButton(
-                                    onClick = { isEditingLimit = true },
-                                    shape = RoundedCornerShape(8.dp),
-                                    contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp)
-                                ) {
-                                    Text("Anpassen ✏️", color = Color.White, fontSize = 12.sp)
+                                TextButton(onClick = { isEditingLimit = true }) {
+                                    Text("Limit ändern", color = Color(0xFF00E676), fontSize = 13.sp)
                                 }
                             }
                         }
 
                         if (isEditingLimit) {
-                            Spacer(modifier = Modifier.height(8.dp))
+                            Spacer(modifier = Modifier.height(12.dp))
                             Row(verticalAlignment = Alignment.CenterVertically) {
                                 OutlinedTextField(
                                     value = limitInput,
                                     onValueChange = { limitInput = it },
-                                    label = { Text("Neues Limit (€)", color = Color.Gray, fontSize = 11.sp) },
+                                    label = { Text("Neues Limit (€)", color = Color.Gray) },
                                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                                     singleLine = true,
                                     colors = OutlinedTextFieldDefaults.colors(
@@ -129,7 +138,7 @@ fun CategoryDetailModal(
                                     ),
                                     modifier = Modifier.weight(1f)
                                 )
-                                Spacer(modifier = Modifier.width(8.dp))
+                                Spacer(modifier = Modifier.width(12.dp))
                                 Button(
                                     onClick = {
                                         val newLimit = limitInput.toDoubleOrNull()
@@ -138,108 +147,126 @@ fun CategoryDetailModal(
                                             isEditingLimit = false
                                         }
                                     },
-                                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676))
+                                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676)),
+                                    shape = RoundedCornerShape(12.dp)
                                 ) {
-                                    Text("Speichern", color = Color.Black, fontSize = 12.sp)
+                                    Text("OK", color = Color.Black, fontWeight = FontWeight.Bold)
                                 }
                             }
                         }
 
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Text(
-                            text = "Ausgegeben: ${String.format(Locale.GERMAN, "%.2f €", spentAmount)}",
-                            color = Color.LightGray,
-                            fontSize = 13.sp
-                        )
+                        Spacer(modifier = Modifier.height(16.dp))
+                        Divider(color = Color(0xFF333333))
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Text("Bisher ausgegeben", color = Color.Gray, fontSize = 14.sp)
+                            Text(
+                                text = String.format(Locale.GERMAN, "%.2f €", spentAmount),
+                                color = Color.White,
+                                fontSize = 14.sp,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                        }
                     }
                 }
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(24.dp))
 
-                // Section Header: Bookings + Direct Entry Button
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
+                // Action Button (Prominent)
+                Button(
+                    onClick = onAddExpense,
+                    modifier = Modifier.fillMaxWidth().height(50.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676)),
+                    shape = RoundedCornerShape(12.dp)
                 ) {
-                    Text(
-                        text = "Einzelne Buchungen (${categoryTransactions.size})",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 14.sp,
-                        color = Color.White
-                    )
-
-                    Button(
-                        onClick = onAddExpense,
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676)),
-                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
-                        shape = RoundedCornerShape(8.dp)
-                    ) {
-                        Text("➕ Ausgabe hinzufügen", color = Color.Black, fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                    }
+                    Text("➕ Ausgabe in dieser Kategorie", color = Color.Black, fontSize = 15.sp, fontWeight = FontWeight.Bold)
                 }
 
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(24.dp))
+                
+                Text(
+                    text = "Buchungen (${categoryTransactions.size})",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 18.sp,
+                    color = Color.White
+                )
 
+                Spacer(modifier = Modifier.height(12.dp))
+
+                // Transactions List
                 if (categoryTransactions.isEmpty()) {
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(vertical = 24.dp),
+                            .weight(1f),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Noch keine Buchungen in dieser Kategorie.", color = Color.Gray, fontSize = 13.sp)
+                        Text("Noch keine Buchungen.", color = Color.Gray, fontSize = 14.sp)
                     }
                 } else {
                     LazyColumn(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .heightIn(max = 280.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                            .weight(1f),
+                        verticalArrangement = Arrangement.spacedBy(10.dp)
                     ) {
                         items(categoryTransactions) { tx ->
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .background(Color(0xFF2A2A2A), shape = RoundedCornerShape(10.dp))
-                                    .padding(12.dp),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
+                            Surface(
+                                color = Color(0xFF262626),
+                                shape = RoundedCornerShape(12.dp),
+                                modifier = Modifier.fillMaxWidth()
                             ) {
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Text(
-                                        text = tx.description,
-                                        color = Color.White,
-                                        fontWeight = FontWeight.SemiBold,
-                                        fontSize = 14.sp
-                                    )
-                                    Text(
-                                        text = dateFormat.format(Date(tx.date)),
-                                        color = Color.Gray,
-                                        fontSize = 11.sp
-                                    )
-                                }
-
-                                Row(verticalAlignment = Alignment.CenterVertically) {
-                                    Text(
-                                        text = String.format(Locale.GERMAN, "%.2f €", tx.amount),
-                                        color = if (tx.amount < 0) Color(0xFFFF5252) else Color(0xFF00E676),
-                                        fontWeight = FontWeight.Bold,
-                                        fontSize = 14.sp
-                                    )
-                                    Spacer(modifier = Modifier.width(4.dp))
-                                    IconButton(
-                                        onClick = { onEditTransaction(tx) },
-                                        modifier = Modifier.size(24.dp)
-                                    ) {
-                                        Text("✏️", fontSize = 12.sp)
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(16.dp),
+                                    horizontalArrangement = Arrangement.SpaceBetween,
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Column(modifier = Modifier.weight(1f)) {
+                                        Text(
+                                            text = tx.description,
+                                            color = Color.White,
+                                            fontWeight = FontWeight.SemiBold,
+                                            fontSize = 15.sp
+                                        )
+                                        Spacer(modifier = Modifier.height(4.dp))
+                                        Text(
+                                            text = dateFormat.format(Date(tx.date)),
+                                            color = Color.Gray,
+                                            fontSize = 12.sp
+                                        )
                                     }
-                                    Spacer(modifier = Modifier.width(2.dp))
-                                    IconButton(
-                                        onClick = { onDeleteTransaction(tx) },
-                                        modifier = Modifier.size(24.dp)
-                                    ) {
-                                        Text("🗑", fontSize = 14.sp)
+
+                                    Row(verticalAlignment = Alignment.CenterVertically) {
+                                        Text(
+                                            text = String.format(Locale.GERMAN, "%.2f €", tx.amount),
+                                            color = if (tx.amount < 0) Color(0xFFFF5252) else Color(0xFF00E676),
+                                            fontWeight = FontWeight.Bold,
+                                            fontSize = 15.sp
+                                        )
+                                        Spacer(modifier = Modifier.width(12.dp))
+                                        IconButton(
+                                            onClick = { onEditTransaction(tx) },
+                                            modifier = Modifier
+                                                .size(32.dp)
+                                                .background(Color(0xFF333333), CircleShape)
+                                        ) {
+                                            Text("✏️", fontSize = 12.sp)
+                                        }
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        IconButton(
+                                            onClick = { onDeleteTransaction(tx) },
+                                            modifier = Modifier
+                                                .size(32.dp)
+                                                .background(Color(0xFF333333), CircleShape)
+                                        ) {
+                                            Text("🗑", fontSize = 12.sp)
+                                        }
                                     }
                                 }
                             }
@@ -247,14 +274,6 @@ fun CategoryDetailModal(
                     }
                 }
             }
-        },
-        confirmButton = {
-            Button(
-                onClick = onDismiss,
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF00E676))
-            ) {
-                Text("Schließen", color = Color.Black)
-            }
         }
-    )
+    }
 }
