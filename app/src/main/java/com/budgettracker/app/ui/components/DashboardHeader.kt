@@ -51,11 +51,11 @@ fun DashboardHeader(
     val progress = rawRatio.coerceIn(0f, 1f)
     val isOver = effectiveLimit > 0 && totalSpent > effectiveLimit
 
-    // Dynamic progress bar colors: Green (<70%), Orange (70%-99%), Red (>=100%)
+    // Dynamic progress bar colors: Green (<33%), Orange (33%-66%), Red (>66%)
     val statusColor = when {
-        isOver || rawRatio >= 1.0f -> Color(0xFFFF5252) // Red
-        rawRatio >= 0.70f -> Color(0xFFFF9800)          // Orange
-        else -> Color(0xFF00E676)                       // Green
+        rawRatio > 0.66f -> Color(0xFFFF5252) // Red
+        rawRatio > 0.33f -> Color(0xFFFF9800) // Orange
+        else -> Color(0xFF00E676)             // Green
     }
 
     Card(
@@ -167,7 +167,7 @@ fun DashboardHeader(
                         text = if (effectiveLimit <= 0) {
                             "Kein Limit"
                         } else if (isOver) {
-                            "${String.format(Locale.GERMAN, "%.2f €", totalSpent - effectiveLimit)} überzogen"
+                            "⚠️ ${String.format(Locale.GERMAN, "%.2f €", totalSpent - effectiveLimit)} überzogen"
                         } else {
                             "${String.format(Locale.GERMAN, "%.2f €", remaining)} übrig"
                         },

@@ -60,11 +60,11 @@ fun CategoryCard(
 
     val isOverBudget = effectiveLimit > 0 && spentAmount > effectiveLimit
 
-    // Dynamic color: Green (<70%), Orange (70%-99%), Red (>=100%)
+    // Dynamic color: Green (<33%), Orange (33%-66%), Red (>66%)
     val progressColor = when {
-        isOverBudget || rawRatio >= 1.0f -> Color(0xFFFF5252) // Red
-        rawRatio >= 0.70f -> Color(0xFFFF9800)          // Orange
-        else -> Color(0xFF00E676)                       // Green
+        rawRatio > 0.66f -> Color(0xFFFF5252) // Red
+        rawRatio > 0.33f -> Color(0xFFFF9800) // Orange
+        else -> Color(0xFF00E676)             // Green
     }
 
     // Category accent color
@@ -141,7 +141,7 @@ fun CategoryCard(
                         text = if (effectiveLimit <= 0) {
                             "Kein Limit"
                         } else if (isOverBudget) {
-                            "${String.format(Locale.GERMAN, "%.2f €", spentAmount - effectiveLimit)} überzogen"
+                            "⚠️ ${String.format(Locale.GERMAN, "%.2f €", spentAmount - effectiveLimit)} überzogen"
                         } else {
                             "${String.format(Locale.GERMAN, "%.2f €", remainingBudget)} übrig"
                         },

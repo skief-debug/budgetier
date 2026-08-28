@@ -159,14 +159,16 @@ fun CategoryDetailModal(
                         Divider(color = Color(0xFF333333))
                         Spacer(modifier = Modifier.height(12.dp))
 
+                        val isOverBudget = category.limit > 0 && spentAmount > category.limit
+
                         Row(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
                             Text("Bisher ausgegeben", color = Color.Gray, fontSize = 14.sp)
                             Text(
-                                text = String.format(Locale.GERMAN, "%.2f €", spentAmount),
-                                color = Color.White,
+                                text = if (isOverBudget) "⚠️ ${String.format(Locale.GERMAN, "%.2f €", spentAmount)}" else String.format(Locale.GERMAN, "%.2f €", spentAmount),
+                                color = if (isOverBudget) Color(0xFFFF5252) else Color.White,
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.SemiBold
                             )
